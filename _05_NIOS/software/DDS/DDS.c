@@ -18,8 +18,7 @@
 
 int main()
 {
-	float a = 0.1;
-  printf("Hello from Nios II! %d %f end\n", 1+1, a);
+  printf("Hello from Nios II!\n");
 
   return 0;
 }

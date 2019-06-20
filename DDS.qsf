@@ -1,4 +1,4 @@
-set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
 # -------------------------------------------------------------------------- #
 #
 # Copyright (C) 2018  Intel Corporation. All rights reserved.
@@ -63,7 +63,7 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name SMART_RECOMPILE ON
-set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
 set_location_assignment PIN_83 -to led_bus[0]
 set_location_assignment PIN_23 -to clk_50M
 set_location_assignment PIN_101 -to DAC_wrt2
@@ -93,7 +93,7 @@ set_location_assignment PIN_144 -to DAC1_data[9]
 set_location_assignment PIN_85 -to led_bus[1]
 set_location_assignment PIN_86 -to led_bus[2]
 set_location_assignment PIN_87 -to led_bus[3]
-set_location_assignment PIN_100 -to rst
+set_location_assignment PIN_88 -to rst
 set_global_assignment -name ENABLE_OCT_DONE OFF
 set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
@@ -102,9 +102,8 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
-set_location_assignment PIN_99 -to clk_test
 set_global_assignment -name ENABLE_SIGNALTAP ON
-set_global_assignment -name USE_SIGNALTAP_FILE _05_Simulation/stp3.stp
+set_global_assignment -name USE_SIGNALTAP_FILE _06_Simulation/stp3.stp
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id auto_signaltap_0
@@ -358,6 +357,11 @@ set_global_assignment -name VERILOG_FILE _03_App/App_Orthogonal_DDS.v
 set_global_assignment -name VERILOG_FILE _03_App/App_Led.v
 set_global_assignment -name VERILOG_FILE _02_Drive/Drive_Clock.v
 set_global_assignment -name VERILOG_FILE _01_Interface/Interface_bsp.v
-set_global_assignment -name SIGNALTAP_FILE _05_Simulation/stp3.stp
+set_global_assignment -name SIGNALTAP_FILE _06_Simulation/stp3.stp
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_50M
 set_global_assignment -name SLD_FILE db/stp3_auto_stripped.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2019-6-21 2:06:15</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1561053975111</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2019-6-21 6:20:54</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1561069254371</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\FPGA_project\__01_CycloneIV_Code\_02_DDS\_05_NIOS\software\DDS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\kernel.sopcinfo</SopcDesignFile>
@@ -50,7 +50,7 @@
                 <SettingName>hal.enable_instruction_related_exceptions_api</SettingName>
                 <Identifier>ALT_INCLUDE_INSTRUCTION_RELATED_EXCEPTION_API</Identifier>
                 <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
+                <Value>true</Value>
                 <DefaultValue>false</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Enables API for registering handlers to service instruction-related exceptions. Enabling this setting increases the size of the exception entry code.</Description>
@@ -386,7 +386,7 @@
                 <SettingName>hal.make.bsp_cflags_optimization</SettingName>
                 <Identifier>BSP_CFLAGS_OPTIMIZATION</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>-O3</Value>
+                <Value>-O2</Value>
                 <DefaultValue>-O0</DefaultValue>
                 <DestinationFile>makefile_variable</DestinationFile>
                 <Description>C/C++ compiler optimization level. "-O0" = no optimization,"-O2" = "normal" optimization, etc. "-O0" is recommended for code that you want to debug since compiler optimization can remove variables and produce non-sequential execution of code while debugging. This setting defines the value of BSP_CFLAGS_OPTIMIZATION in Makefile.</Description>

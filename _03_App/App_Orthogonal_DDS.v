@@ -30,8 +30,10 @@ wire [9:0]NCO_out_sin;
 wire [9:0]NCO_out_cos;
 wire NCO_out_valid;
 
-assign out_DA1_data = {~NCO_out_sin[9],NCO_out_sin[8:0]};
-assign out_DA2_data = {~NCO_out_cos[9],NCO_out_cos[8:0]};
+//assign out_DA1_data = {~NCO_out_sin[9],NCO_out_sin[8:0]};
+//assign out_DA2_data = {~NCO_out_cos[9],NCO_out_cos[8:0]};
+assign out_DA1_data = NCO_out_sin + 10'd512;
+assign out_DA2_data = NCO_out_cos + 10'd512;
 
 
 /* 连接输出 ---------------------------*/

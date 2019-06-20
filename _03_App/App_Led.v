@@ -35,7 +35,7 @@ begin
 	else 
 	//if(in_clk_ms)
 	begin
-        cnt <= (cnt + 1)%3000; 
+        cnt <= (cnt + 1)%300; 
 		if(cnt == 0) 
 		begin
 			out_led[0] <= ~out_led[0]; 
