@@ -1,3 +1,4 @@
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
 # -------------------------------------------------------------------------- #
 #
 # Copyright (C) 2018  Intel Corporation. All rights reserved.
@@ -62,6 +63,7 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
 set_location_assignment PIN_83 -to led_bus[0]
 set_location_assignment PIN_23 -to clk_50M
 set_location_assignment PIN_101 -to DAC_wrt2
@@ -150,13 +152,6 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_global_assignment -name FLOW_ENABLE_RTL_VIEWER OFF
 set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS ON
-set_global_assignment -name QIP_FILE _04_IP_core/PLL/Drive_PLL.qip
-set_global_assignment -name VERILOG_FILE _03_App/App_Orthogonal_DDS.v
-set_global_assignment -name QSYS_FILE _04_IP_core/NCO/NCO.qsys
-set_global_assignment -name VERILOG_FILE _03_App/App_Led.v
-set_global_assignment -name VERILOG_FILE _02_Drive/Drive_Clock.v
-set_global_assignment -name VERILOG_FILE _01_Interface/Interface_bsp.v
-set_global_assignment -name SIGNALTAP_FILE _05_Simulation/stp3.stp
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "App_Orthogonal_DDS:App_Orthogonal_DDS_instance|NCO:NCO_instance|clk" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "App_Orthogonal_DDS:App_Orthogonal_DDS_instance|NCO:NCO_instance|fcos_o[0]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "App_Orthogonal_DDS:App_Orthogonal_DDS_instance|NCO:NCO_instance|fcos_o[1]" -section_id auto_signaltap_0
@@ -356,5 +351,13 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name QIP_FILE _04_IP_core/NCO/NCO/synthesis/NCO.qip
+set_global_assignment -name QIP_FILE _05_NIOS/kernel/synthesis/kernel.qip
+set_global_assignment -name QIP_FILE _04_IP_core/PLL/Drive_PLL.qip
+set_global_assignment -name VERILOG_FILE _03_App/App_Orthogonal_DDS.v
+set_global_assignment -name VERILOG_FILE _03_App/App_Led.v
+set_global_assignment -name VERILOG_FILE _02_Drive/Drive_Clock.v
+set_global_assignment -name VERILOG_FILE _01_Interface/Interface_bsp.v
+set_global_assignment -name SIGNALTAP_FILE _05_Simulation/stp3.stp
 set_global_assignment -name SLD_FILE db/stp3_auto_stripped.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

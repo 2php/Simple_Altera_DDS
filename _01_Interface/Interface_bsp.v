@@ -58,21 +58,26 @@ Drive_Clock Drive_Clock0
 	,.out_led(led_bus)
 );
 
-App_Orthogonal_DDS App_Orthogonal_DDS_instance
-( 
-	.in_rst(rst)
-	,.in_clk_DAC2900(out_clk_100M)
-	,.in_clk_NCO(out_clk_100M)
-    ,.in_output_freq(32'd1000000)//TODO:输入频率
-    
-	,.DAC_clk1(DAC_clk1)
-    ,.DAC_clk2(DAC_clk2)
-    ,.DAC_wrt1(DAC_wrt1)
-    ,.DAC_wrt2(DAC_wrt2)
-    ,.out_DA1_data(DAC1_data)
-    ,.out_DA2_data(DAC2_data)
-);
+//App_Orthogonal_DDS App_Orthogonal_DDS_instance
+//( 
+//	.in_rst(rst)
+//	,.in_clk_DAC2900(out_clk_100M)
+//	,.in_clk_NCO(out_clk_100M)
+//    ,.in_output_freq(32'd1000000)//TODO:输入频率
+//    
+//	,.DAC_clk1(DAC_clk1)
+//    ,.DAC_clk2(DAC_clk2)
+//    ,.DAC_wrt1(DAC_wrt1)
+//    ,.DAC_wrt2(DAC_wrt2)
+//    ,.out_DA1_data(DAC1_data)
+//    ,.out_DA2_data(DAC2_data)
+//);
 
+
+kernel u0 (
+    .clk_clk       (out_clk_100M),       //   clk.clk
+    .reset_reset_n (rst)  // reset.reset_n
+);
 
 endmodule
 /*******************************(C) COPYRIGHT 2019 Teemo（陈晓东）*********************************/
