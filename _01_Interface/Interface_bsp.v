@@ -61,8 +61,8 @@ Drive_Clock Drive_Clock0
 App_Orthogonal_DDS App_Orthogonal_DDS_instance
 ( 
 	.in_rst(rst)
-	,.in_clk_DAC2900(clk_50M)
-	,.in_clk_NCO(clk_50M)
+	,.in_clk_DAC2900(out_clk_100M)
+	,.in_clk_NCO(out_clk_100M)
     ,.in_output_freq(32'd1000000)//TODO:输入频率
     
 	,.DAC_clk1(DAC_clk1)
