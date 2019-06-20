@@ -30,8 +30,6 @@ wire [9:0]NCO_out_sin;
 wire [9:0]NCO_out_cos;
 wire NCO_out_valid;
 
-//assign out_DA1_data = {~NCO_out_sin[9],NCO_out_sin[8:0]};
-//assign out_DA2_data = {~NCO_out_cos[9],NCO_out_cos[8:0]};
 assign out_DA1_data = NCO_out_sin + 10'd512;
 assign out_DA2_data = NCO_out_cos + 10'd512;
 
@@ -51,7 +49,7 @@ assign DAC_wrt2 = in_clk_DAC2900;
 //d42950 1k d42949673 1M
 NCO NCO_instance (
     .clk       (in_clk_NCO),       // clk.clk
-    .reset_n   (1'b1),   // rst.reset_n
+    .reset_n   (in_rst),   // rst.reset_n
     .clken     (1'b1),     //  in.clken
     .phi_inc_i (32'd42949673), //    .phi_inc_i
     .fsin_o    (NCO_out_sin),    // out.fsin_o
