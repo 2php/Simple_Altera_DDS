@@ -41,6 +41,14 @@
          type = "int";
       }
    }
+   element nios2.debug_mem_slave
+   {
+      datum baseAddress
+      {
+         value = "133120";
+         type = "String";
+      }
+   }
    element onchip_memory2_0
    {
       datum _sortIndex
@@ -54,6 +62,22 @@
       datum baseAddress
       {
          value = "65536";
+         type = "String";
+      }
+   }
+   element pio_NCO_phi
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element pio_NCO_phi.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
          type = "String";
       }
    }
@@ -95,6 +119,11 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
+ <interface
+   name="pio_nco_phi"
+   internal="pio_NCO_phi.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="reset" internal="clk.clk_in_reset" type="reset" dir="end" />
  <module name="clk" kind="clock_source" version="18.0" enabled="1">
   <parameter name="clockFrequency" value="100000000" />
@@ -141,7 +170,7 @@
   <parameter name="dataAddrWidth" value="18" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x12800' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x21000' end='0x21008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid.control_slave' start='0x21008' end='0x21010' type='altera_avalon_sysid_qsys.control_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='pio_NCO_phi.s1' start='0x0' end='0x10' type='altera_avalon_pio.s1' /><slave name='onchip_memory2_0.s1' start='0x10000' end='0x15000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x21000' end='0x21008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid.control_slave' start='0x21008' end='0x21010' type='altera_avalon_sysid_qsys.control_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -180,7 +209,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Fast" />
   <parameter name="instAddrWidth" value="18" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x12800' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x10000' end='0x15000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -319,7 +348,7 @@
   <parameter name="initMemContent" value="true" />
   <parameter name="initializationFileName" value="onchip_memory2_0" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="10240" />
+  <parameter name="memorySize" value="20480" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -330,6 +359,24 @@
   <parameter name="useNonDefaultInitFile" value="false" />
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="true" />
+ </module>
+ <module
+   name="pio_NCO_phi"
+   kind="altera_avalon_pio"
+   version="18.0"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="100000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
  </module>
  <module
    name="sysid"
@@ -377,6 +424,15 @@
  <connection
    kind="avalon"
    version="18.0"
+   start="nios2.data_master"
+   end="pio_NCO_phi.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
    start="nios2.instruction_master"
    end="nios2.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -395,6 +451,7 @@
  <connection kind="clock" version="18.0" start="clk.clk" end="nios2.clk" />
  <connection kind="clock" version="18.0" start="clk.clk" end="sysid.clk" />
  <connection kind="clock" version="18.0" start="clk.clk" end="jtag_uart.clk" />
+ <connection kind="clock" version="18.0" start="clk.clk" end="pio_NCO_phi.clk" />
  <connection
    kind="clock"
    version="18.0"
@@ -410,6 +467,11 @@
    version="18.0"
    start="clk.clk_reset"
    end="jtag_uart.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk.clk_reset"
+   end="pio_NCO_phi.reset" />
  <connection
    kind="reset"
    version="18.0"
@@ -430,6 +492,11 @@
    version="18.0"
    start="nios2.debug_reset_request"
    end="jtag_uart.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="nios2.debug_reset_request"
+   end="pio_NCO_phi.reset" />
  <connection
    kind="reset"
    version="18.0"

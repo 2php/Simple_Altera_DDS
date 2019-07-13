@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2' in SOPC Builder design 'kernel'
  * SOPC Builder design path: ../../kernel.sopcinfo
  *
- * Generated: Fri Jun 21 06:18:49 CST 2019
+ * Generated: Fri Jun 21 20:20:05 CST 2019
  */
 
 /*
@@ -143,6 +143,7 @@
 
 #define __ALTERA_AVALON_JTAG_UART
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
+#define __ALTERA_AVALON_PIO
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_NIOS2_GEN2
 
@@ -235,10 +236,37 @@
 #define ONCHIP_MEMORY2_0_READ_DURING_WRITE_MODE "DONT_CARE"
 #define ONCHIP_MEMORY2_0_SINGLE_CLOCK_OP 0
 #define ONCHIP_MEMORY2_0_SIZE_MULTIPLE 1
-#define ONCHIP_MEMORY2_0_SIZE_VALUE 10240
-#define ONCHIP_MEMORY2_0_SPAN 10240
+#define ONCHIP_MEMORY2_0_SIZE_VALUE 20480
+#define ONCHIP_MEMORY2_0_SPAN 20480
 #define ONCHIP_MEMORY2_0_TYPE "altera_avalon_onchip_memory2"
 #define ONCHIP_MEMORY2_0_WRITABLE 1
+
+
+/*
+ * pio_NCO_phi configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pio_NCO_phi altera_avalon_pio
+#define PIO_NCO_PHI_BASE 0x0
+#define PIO_NCO_PHI_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_NCO_PHI_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_NCO_PHI_CAPTURE 0
+#define PIO_NCO_PHI_DATA_WIDTH 32
+#define PIO_NCO_PHI_DO_TEST_BENCH_WIRING 0
+#define PIO_NCO_PHI_DRIVEN_SIM_VALUE 0
+#define PIO_NCO_PHI_EDGE_TYPE "NONE"
+#define PIO_NCO_PHI_FREQ 100000000
+#define PIO_NCO_PHI_HAS_IN 0
+#define PIO_NCO_PHI_HAS_OUT 1
+#define PIO_NCO_PHI_HAS_TRI 0
+#define PIO_NCO_PHI_IRQ -1
+#define PIO_NCO_PHI_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PIO_NCO_PHI_IRQ_TYPE "NONE"
+#define PIO_NCO_PHI_NAME "/dev/pio_NCO_phi"
+#define PIO_NCO_PHI_RESET_VALUE 0
+#define PIO_NCO_PHI_SPAN 16
+#define PIO_NCO_PHI_TYPE "altera_avalon_pio"
 
 
 /*
@@ -253,7 +281,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1561050161
+#define SYSID_TIMESTAMP 1561118610
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */
