@@ -106,16 +106,16 @@ set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_global_assignment -name USE_SIGNALTAP_FILE _06_Simulation/stp3.stp
 set_global_assignment -name FLOW_ENABLE_RTL_VIEWER OFF
 set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS ON
-set_global_assignment -name QIP_FILE _04_IP_core/NCO/NCO/synthesis/NCO.qip
-set_global_assignment -name QIP_FILE _05_NIOS/kernel/synthesis/kernel.qip
-set_global_assignment -name QIP_FILE _04_IP_core/PLL/Drive_PLL.qip
-set_global_assignment -name VERILOG_FILE _03_App/App_Orthogonal_DDS.v
-set_global_assignment -name VERILOG_FILE _03_App/App_Led.v
-set_global_assignment -name VERILOG_FILE _02_Drive/Drive_Clock.v
-set_global_assignment -name VERILOG_FILE _01_Interface/Interface_bsp.v
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_50M
+set_global_assignment -name QIP_FILE _04_IP_core/NCO/NCO/synthesis/NCO.qip
+set_global_assignment -name QIP_FILE _05_NIOS/kernel/synthesis/kernel.qip
+set_global_assignment -name VERILOG_FILE _04_IP_core/PLL/Drive_PLL.v
+set_global_assignment -name VERILOG_FILE _03_App/App_Orthogonal_DDS.v
+set_global_assignment -name VERILOG_FILE _03_App/App_Led.v
+set_global_assignment -name VERILOG_FILE _02_Drive/Drive_Clock.v
+set_global_assignment -name VERILOG_FILE _01_Interface/Interface_bsp.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

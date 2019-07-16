@@ -75,7 +75,7 @@ App_Orthogonal_DDS App_Orthogonal_DDS_instance
 );
 
 //NIOS IP核
-kernel u0 (
+kernel NIOS (
     .clk_clk       (out_clk_100M),       //   clk.clk
     .pio_nco_phi_export(NCO_phi_inc),
     .reset_reset_n (rst)  // reset.reset_n
