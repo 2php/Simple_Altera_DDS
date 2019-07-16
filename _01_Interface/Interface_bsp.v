@@ -58,13 +58,12 @@ Drive_Clock Drive_Clock0
 	,.out_led(led_bus)
 );
 
-wire [31:0] NCO_phi_inc;
 App_Orthogonal_DDS App_Orthogonal_DDS_instance
 ( 
 	.in_rst(rst)
 	,.in_clk_DAC2900(out_clk_100M)
 	,.in_clk_NCO(out_clk_100M)
-    ,.in_output_freq(NCO_phi_inc)//TODO:输入频率
+    ,.in_output_freq(32'd42949673)//TODO:输入频率转换为频率字
     
 	,.DAC_clk1(DAC_clk1)
     ,.DAC_clk2(DAC_clk2)
@@ -74,12 +73,6 @@ App_Orthogonal_DDS App_Orthogonal_DDS_instance
     ,.out_DA2_data(DAC2_data)
 );
 
-//NIOS IP核
-kernel u0 (
-    .clk_clk       (out_clk_100M),       //   clk.clk
-    .pio_nco_phi_export(NCO_phi_inc),
-    .reset_reset_n (rst)  // reset.reset_n
-);
 
 endmodule
 /*******************************(C) COPYRIGHT 2019 Teemo（陈晓东）*********************************/

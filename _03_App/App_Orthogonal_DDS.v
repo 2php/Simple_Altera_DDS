@@ -14,7 +14,7 @@ module App_Orthogonal_DDS
 	input in_rst                   //复位
 	,input in_clk_DAC2900          //DAC的时钟
 	,input in_clk_NCO              //NCO IP核的时钟
-    ,input [31:0]in_output_freq    //输出的频率，从NIOS中取得
+    ,input [31:0]in_output_freq    //需要输出的频率对应频率字
     
 	,output wire DAC_clk1          //DAC的控制信号
     ,output wire DAC_clk2 
@@ -51,26 +51,12 @@ NCO NCO_instance (
     .clk       (in_clk_NCO),       // clk.clk
     .reset_n   (in_rst),   // rst.reset_n
     .clken     (1'b1),     //  in.clken
-    .phi_inc_i (in_output_freq), //    .phi_inc_i 32'd42949673
+    .phi_inc_i (in_output_freq), //    .phi_inc_i 
     .fsin_o    (NCO_out_sin),    // out.fsin_o
     .fcos_o    (NCO_out_cos),    //    .fcos_o
     .out_valid (NCO_out_valid)  //    .out_valid
 );
 
-//Drive_DAC2900 Drive_DAC2900_instance
-//(   
-//    .in_rst(in_rst),
-//    .in_DA1_data(fsin_o),
-//    .in_DA2_data(fcos_o),
-//    
-//    .out_clk1(out_clk1),
-//    .out_clk2(out_clk2),
-//    .out_wrt1(out_wrt1),
-//    .out_wrt2(out_wrt2),  
-//    .out_DA1_data(out_DA1_data),
-//    .out_DA2_data(out_DA2_data),
-//    .out_PD(out_PD)
-//);
 
 /* 运行线程 ---------------------------*/
 
