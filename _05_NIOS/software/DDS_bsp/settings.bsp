@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2019-6-21 21:06:08</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1561122368703</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2019-7-16 12:10:09</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1563250209818</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\FPGA_project\__01_CycloneIV_Code\_02_DDS\_05_NIOS\software\DDS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\kernel.sopcinfo</SopcDesignFile>
@@ -386,7 +386,7 @@
                 <SettingName>hal.make.bsp_cflags_optimization</SettingName>
                 <Identifier>BSP_CFLAGS_OPTIMIZATION</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>-O2</Value>
+                <Value>-O0</Value>
                 <DefaultValue>-O0</DefaultValue>
                 <DestinationFile>makefile_variable</DestinationFile>
                 <Description>C/C++ compiler optimization level. "-O0" = no optimization,"-O2" = "normal" optimization, etc. "-O0" is recommended for code that you want to debug since compiler optimization can remove variables and produce non-sequential execution of code while debugging. This setting defines the value of BSP_CFLAGS_OPTIMIZATION in Makefile.</Description>

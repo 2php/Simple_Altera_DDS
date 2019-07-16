@@ -2,7 +2,7 @@ set_global_assignment -entity "kernel" -library "kernel" -name IP_TOOL_NAME "Qsy
 set_global_assignment -entity "kernel" -library "kernel" -name IP_TOOL_VERSION "18.0"
 set_global_assignment -entity "kernel" -library "kernel" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "kernel" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../kernel.sopcinfo"]
-set_global_assignment -entity "kernel" -library "kernel" -name SLD_INFO "QSYS_NAME kernel HAS_SOPCINFO 1 GENERATION_ID 1561118610"
+set_global_assignment -entity "kernel" -library "kernel" -name SLD_INFO "QSYS_NAME kernel HAS_SOPCINFO 1 GENERATION_ID 1563248579"
 set_global_assignment -library "kernel" -name MISC_FILE [file join $::quartus(qip_path) "../kernel.cmp"]
 set_global_assignment -library "kernel" -name SLD_FILE [file join $::quartus(qip_path) "kernel.regmap"]
 set_global_assignment -library "kernel" -name SLD_FILE [file join $::quartus(qip_path) "kernel.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_DISP
 set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU2MTExODYxMA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU2MzI0ODU3OQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0Q0UyMkUyMkM4::QXV0byBERVZJQ0U="
 set_global_assignment -entity "kernel" -library "kernel" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::OA==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="

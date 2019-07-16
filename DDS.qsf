@@ -106,16 +106,78 @@ set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_global_assignment -name USE_SIGNALTAP_FILE _06_Simulation/stp3.stp
 set_global_assignment -name FLOW_ENABLE_RTL_VIEWER OFF
 set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS ON
-set_global_assignment -name QIP_FILE _04_IP_core/NCO/NCO/synthesis/NCO.qip
-set_global_assignment -name QIP_FILE _05_NIOS/kernel/synthesis/kernel.qip
-set_global_assignment -name QIP_FILE _04_IP_core/PLL/Drive_PLL.qip
-set_global_assignment -name VERILOG_FILE _03_App/App_Orthogonal_DDS.v
-set_global_assignment -name VERILOG_FILE _03_App/App_Led.v
-set_global_assignment -name VERILOG_FILE _02_Drive/Drive_Clock.v
-set_global_assignment -name VERILOG_FILE _01_Interface/Interface_bsp.v
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_50M
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_sysid.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_pio_NCO_phi.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_onchip_memory2_0.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_nios2_cpu_test_bench.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_nios2_cpu_mult_cell.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_nios2_cpu_debug_slave_wrapper.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_nios2_cpu_debug_slave_tck.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_nios2_cpu_debug_slave_sysclk.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_nios2_cpu.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_nios2.v
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_rsp_mux_001.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_rsp_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_rsp_demux_002.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_rsp_demux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_router_004.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_router_002.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_router_001.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_router.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_cmd_mux_002.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_cmd_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_cmd_demux_001.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_cmd_demux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0_avalon_st_adapter.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_mm_interconnect_0.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_jtag_uart.v
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/kernel_irq_mapper.sv
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_reset_synchronizer.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_reset_controller.v
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_merlin_traffic_limiter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_merlin_slave_translator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_merlin_slave_agent.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_merlin_reorder_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_merlin_master_translator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_merlin_master_agent.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+set_global_assignment -name SYSTEMVERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_merlin_arbitrator.sv
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_avalon_st_pipeline_base.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/submodules/altera_avalon_sc_fifo.v
+set_global_assignment -name VERILOG_FILE _05_NIOS/kernel/synthesis/kernel.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/sid_2c_1p.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/segment_sel.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/segment_arr_tdl.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/NCO_nco_ii_0.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/dop_reg.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/cordic_zxor_1p_lpm.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/cordic_sxor_1p_lpm.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/cordic_axor_1p_lpm.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/cord_seg_sel.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/cord_init.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/cord_fs.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/cord_2c.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_xnqg.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_nco_mob_rw.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_nco_isdr.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_nco_as_m_cen.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_nco_apr_dxx.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_gar.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_gal.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_dxx_g.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_dxx.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_crd_par.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/submodules/asj_altqmcpipe.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/PLL/Drive_PLL.v
+set_global_assignment -name VERILOG_FILE _04_IP_core/NCO/NCO/synthesis/NCO.v -library NCO
+set_global_assignment -name VERILOG_FILE _03_App/App_Orthogonal_DDS.v
+set_global_assignment -name VERILOG_FILE _03_App/App_Led.v
+set_global_assignment -name VERILOG_FILE _02_Drive/Drive_Clock.v
+set_global_assignment -name VERILOG_FILE _01_Interface/Interface_bsp.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
